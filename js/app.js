@@ -18,6 +18,7 @@ createApp({
         "Marvel's Avengers"
       ],
       currentIndex: 0,
+      index: 0,
     }
   },
   methods: {
@@ -32,6 +33,9 @@ createApp({
       if(this.currentIndex < 0){
         this.currentIndex = (this.images.length - 1);
       }
+    },
+    takeImage(thumbIndex){
+      this.currentIndex = thumbIndex;
     }
   }
 }).mount('#app');
