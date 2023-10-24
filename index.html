@@ -33,7 +33,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="nextImage()"></div>
                     <div class="next" @click="prevImage()"></div>
-                    <div class="thumb active" v-for = "(item, index) in images" @click = "takeImage(index)">
+                    <div class="thumb" v-for = "(item, index) in images" :class = "currentIndex === index ? 'active' : ''" @click = "takeImage(index)">
                         <img :src="item" alt="Svezia" />
                     </div>
                     </div>
