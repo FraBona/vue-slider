@@ -17,7 +17,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" :autoplay="autoplay()" v-on:mouseover = "stopPlay()" v-on:mouseleave = "autoplay()">
                     <img :src="images[currentIndex]" alt="Spiderman" />
                     <div class="text">
                         <h3>{{title[currentIndex]}}</h3>

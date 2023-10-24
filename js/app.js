@@ -19,6 +19,7 @@ createApp({
       ],
       currentIndex: 0,
       index: 0,
+      time: true,
     }
   },
   methods: {
@@ -26,7 +27,8 @@ createApp({
       this.currentIndex++;
       if(this.currentIndex > (this.images.length - 1)){
         this.currentIndex = 0;
-      }
+      } 
+      this.autoplay();
     },
     prevImage(){
       this.currentIndex--;
@@ -36,6 +38,16 @@ createApp({
     },
     takeImage(thumbIndex){
       this.currentIndex = thumbIndex;
+    },
+    autoplay(){
+      if (this.time === true){
+        this.time = setInterval(() => {
+          this.nextImage();
+       }, 1000)
+      }
+    },
+    stopPlay(){
+      clearInterval(this.time);
     }
   }
 }).mount('#app');
