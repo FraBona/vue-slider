@@ -23,7 +23,15 @@ createApp({
   methods: {
     nextImage(){
       this.currentIndex++;
-      console.log(this.currentIndex);
+      if(this.currentIndex > (this.images.length - 1)){
+        this.currentIndex = 0;
+      }
+    },
+    prevImage(){
+      this.currentIndex--;
+      if(this.currentIndex < 0){
+        this.currentIndex = (this.images.length - 1);
+      }
     }
   }
 }).mount('#app');
