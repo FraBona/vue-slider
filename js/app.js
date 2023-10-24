@@ -48,6 +48,7 @@ createApp({
     },
     stopPlay(){
       clearInterval(this.time);
+      this.time = false;
     }
   }
 }).mount('#app');
