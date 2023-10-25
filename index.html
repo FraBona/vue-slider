@@ -18,9 +18,9 @@
             <div class="slider-wrapper" tabindex="0" :autoplay="autoplay()" v-on:mouseover = "stopPlay()" v-on:mouseleave = "time = true">
 
                 <div class="item" >
-                    <img :src="images[currentIndex]" alt="Spiderman" />
+                    <img :src="slides[currentIndex].images" alt="Spiderman" />
                     <div class="text">
-                        <h3>{{title[currentIndex]}}</h3>
+                        <h3>{{slides[currentIndex].title}}</h3>
                         <p>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
                             tempore aliquid deleniti aut
@@ -33,8 +33,8 @@
                 <div class="thumbs">
                     <div class="prev" @click="nextImage()"></div>
                     <div class="next" @click="prevImage()"></div>
-                    <div class="thumb" v-for = "(item, index) in images" :class = "currentIndex === index ? 'active' : ''" @click = "takeImage(index)">
-                        <img :src="item" alt="Svezia" />
+                    <div class="thumb" v-for = "(item, index) in slides" :class = "currentIndex === index ? 'active' : ''" @click = "takeImage(index)">
+                        <img :src="item.images" alt="Svezia" />
                     </div>
                     </div>
                 </div>

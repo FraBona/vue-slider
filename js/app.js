@@ -3,19 +3,27 @@ const createApp = Vue.createApp
 createApp({
   data(){
     return{
-      images: [
-        "img/01.webp",
-        "img/02.webp",
-        "img/03.webp",
-        "img/04.webp",
-        "img/05.webp"
-      ],
-      title: [
-        "Spiderman",
-        "Ratchet & Clank:",
-        "Fortnite",
-        "Stray",
-        "Marvel's Avengers"
+      slides: [
+        {
+          images: "img/01.webp",
+          title: "spiderman",
+        },
+        {
+          images: "img/02.webp",
+          title: "spiderman",
+        },
+        {
+          images: "img/03.webp",
+          title: "spiderman",
+        },
+        {
+          images: "img/04.webp",
+          title: "spiderman",
+        },
+        {
+          images: "img/05.webp",
+          title: "spiderman",
+        }
       ],
       currentIndex: 0,
       index: 0,
@@ -25,7 +33,7 @@ createApp({
   methods: {
     nextImage(){
       this.currentIndex++;
-      if(this.currentIndex > (this.images.length - 1)){
+      if(this.currentIndex > (this.slides.images.length - 1)){
         this.currentIndex = 0;
       } 
       this.autoplay();
@@ -33,7 +41,7 @@ createApp({
     prevImage(){
       this.currentIndex--;
       if(this.currentIndex < 0){
-        this.currentIndex = (this.images.length - 1);
+        this.currentIndex = (this.slides.images.length - 1);
       }
     },
     takeImage(thumbIndex){
